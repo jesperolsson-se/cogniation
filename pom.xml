@@ -50,5 +50,9 @@
       </plugins>
     </pluginManagement>
   </build>
-
+  <profiles>
+    <profile>
+      <id>dev</id>
+    </profile>
+  </profiles>
 </project>

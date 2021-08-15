@@ -8,6 +8,19 @@
    <artifactId>cogniation</artifactId>
    <version>0.1</version>
 
+  <properties>
+    <qulice.version>0.18.19</qulice.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>5.7.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
   <build>
     <pluginManagement>
       <plugins>
@@ -53,6 +66,26 @@
   <profiles>
     <profile>
       <id>dev</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>com.qulice</groupId>
+            <artifactId>qulice-maven-plugin</artifactId>
+            <version>${qulice.version}</version>
+            <configuration>
+              <license>file:${basedir}/tldr-license</license>
+            </configuration>
+            <executions>
+              <execution>
+                <phase>validate</phase>
+                <goals>
+                  <goal>check</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
     </profile>
   </profiles>
 </project>

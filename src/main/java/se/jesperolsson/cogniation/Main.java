@@ -19,6 +19,7 @@ public final class Main {
      * Main method.
      * @param args Program arguments.
      */
+    @SuppressWarnings("PMD.SystemPrintln")
     public static void main(final String... args) {
         System.out.println(greeting());
     }
@@ -27,6 +28,7 @@ public final class Main {
      * Dummy method. @todo: Should be removed as per #3.
      * @return A standard greetings message.
      */
+    @SuppressWarnings("PMD.ProhibitPublicStaticMethods")
     public static String greeting() {
         return "Hello, World!";
     }

@@ -1,5 +1,19 @@
 Tool for cognitive association training/rehabilitation.
 
+# Usage
+
+Start by installing Cogniation through Maven.
+
+`mvn clean package`
+
+This creates a JAR file, which can then be executed and forwarded to port 8080.
+
+`java -cp ./target/cogniation-0.1.jar:./target/deps/* se.jesperolsson.cogniation.Main`
+
+Finally, point a web browser to said port.
+
+`curl http://localhost:8080`
+
 # How to contribute
 
 Thank you for considering to contribute to this project. We appreciate all

@@ -3,6 +3,11 @@
  */
 package se.jesperolsson.cogniation;
 
+import org.takes.facets.fork.FkRegex;
+import org.takes.facets.fork.TkFork;
+import org.takes.http.Exit;
+import org.takes.http.FtBasic;
+
 /**
  * Program entry point.
  *
@@ -18,18 +23,16 @@ public final class Main {
     /**
      * Main method.
      * @param args Program arguments.
+     * @throws Exception If request cannot be processed.
      */
-    @SuppressWarnings("PMD.SystemPrintln")
-    public static void main(final String... args) {
-        System.out.println(greeting());
-    }
-
-    /**
-     * Dummy method. @todo: Should be removed as per #3.
-     * @return A standard greetings message.
-     */
-    @SuppressWarnings("PMD.ProhibitPublicStaticMethods")
-    public static String greeting() {
-        return "Hello, World!";
+    public static void main(final String... args) throws Exception {
+        final int port = 8080;
+        new FtBasic(
+            new TkFork(
+                new FkRegex(
+                    "/", new Greeting()
+                )
+            ), port
+        ).start(Exit.NEVER);
     }
 }

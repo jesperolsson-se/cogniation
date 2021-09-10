@@ -19,6 +19,11 @@
       <version>5.7.1</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.takes</groupId>
+      <artifactId>takes</artifactId>
+      <version>1.16</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -35,6 +40,10 @@
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.8.1</version>
+          <configuration>
+            <target>16</target>
+            <source>16</source>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
@@ -62,6 +71,21 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    <plugins>
+      <plugin>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>copy-dependencies</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.directory}/deps</outputDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
   </build>
   <profiles>
     <profile>
@@ -74,6 +98,9 @@
             <version>${qulice.version}</version>
             <configuration>
               <license>file:${basedir}/tldr-license</license>
+              <excludes>
+                <exclude>dependencies:org.takes:takes</exclude>
+              </excludes>
             </configuration>
             <executions>
               <execution>

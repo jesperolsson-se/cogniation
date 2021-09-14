@@ -3,6 +3,8 @@
  */
 package se.jesperolsson.cogniation;
 
+import org.cactoos.iterable.IterableOf;
+import org.cactoos.iterator.Cycled;
 import org.takes.facets.fork.FkRegex;
 import org.takes.facets.fork.TkFork;
 import org.takes.http.Exit;
@@ -18,10 +20,12 @@ public final class Main {
     /**
      * Ctor.
      */
-    private Main() { }
+    private Main() {
+    }
 
     /**
      * Main method.
+     *
      * @param args Program arguments.
      * @throws Exception If request cannot be processed.
      */
@@ -30,7 +34,26 @@ public final class Main {
         new FtBasic(
             new TkFork(
                 new FkRegex(
-                    "/", new Greeting()
+                    "/",
+                    new Exercise(
+                        new Cycled<>(
+                            new IterableOf<>(
+                                new AcText("Name three religious festivals."),
+                                new AcText("Name three birds."),
+                                new AcText("Name three TV shows."),
+                                new AcText("Name three car brands."),
+                                new AcText("Name three countries."),
+                                new AcText("Name three dishes."),
+                                new AcText("Name three fruits."),
+                                new AcText("Name three toys."),
+                                new AcText("Name three pieces of furniture."),
+                                new AcText("Name three pieces of clothing."),
+                                new AcText("Name three pets."),
+                                new AcText("Name three professions."),
+                                new AcText("Name three ball games.")
+                            )
+                        )
+                    )
                 )
             ), port
         ).start(Exit.NEVER);

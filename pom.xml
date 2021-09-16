@@ -24,6 +24,11 @@
       <artifactId>takes</artifactId>
       <version>1.16</version>
     </dependency>
+    <dependency>
+      <groupId>org.cactoos</groupId>
+      <artifactId>cactoos</artifactId>
+      <version>0.50</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -99,7 +104,7 @@
             <configuration>
               <license>file:${basedir}/tldr-license</license>
               <excludes>
-                <exclude>dependencies:org.takes:takes</exclude>
+                <exclude>dependencies:.*</exclude>
               </excludes>
             </configuration>
             <executions>

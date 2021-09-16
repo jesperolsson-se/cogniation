@@ -4,27 +4,30 @@
 package se.jesperolsson.cogniation;
 
 import java.io.IOException;
+import org.cactoos.iterator.IteratorOf;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.takes.rq.RqFake;
 import org.takes.rs.RsPrint;
 
 /**
- * Tests for {@link Greeting}.
+ * Tests for {@link Exercise}.
  *
  * @since 0.1
  */
-public class GreetingTest {
+public class ExerciseTest {
 
-    /**
-     * Dummy test. @todo: Should be removed as per #3.
-     */
     @Test
-    public void greetWithHelloWorld() throws IOException {
+    public void completeSeries() throws IOException {
+        final String response = "Foo";
         Assertions.assertEquals(
-            "Hello, World!",
+            response,
             new RsPrint(
-                new Greeting().act(
+                new Exercise(
+                    new IteratorOf(
+                        (Association) () -> response
+                    )
+                ).act(
                     new RqFake("GET", "/")
                 )
             ).printBody()

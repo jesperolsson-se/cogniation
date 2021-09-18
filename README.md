@@ -1,4 +1,9 @@
-Tool for cognitive association training/rehabilitation.
+Being able to make mental connections between concepts, events or mental
+states - cognitive associations - are crucial to e.g., memory and learning.
+Strokes and other medical conditions can severely damage this ability, and
+require training or rehabilitation. This project packages such exercises in
+a web service, thus making the treatment easily accessible and the patient
+more independent.
 
 # Usage
 

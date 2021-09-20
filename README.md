@@ -5,6 +5,12 @@ require training or rehabilitation. This project packages such exercises in
 a web service, thus making the treatment easily accessible and the patient
 more independent.
 
+# Use cases
+
+## Patient independence
+
+Andrew is a stroke patient suffering reduced cognitive capacity and is in need of rehabilitation. Being aware of these limitations, he thinks of himself as "dumb" and feels embarrassed and vulnerable. Because of this, Andrew is reluctant to ask his family for help in administrating his exercises. _Cogniation_ would give Andrew the amount of privacy and control he needs to keep pace with his treatment.
+
 # Usage
 
 Start by installing Cogniation through Maven.

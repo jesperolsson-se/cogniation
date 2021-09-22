@@ -7,6 +7,25 @@
    <groupId>se.jesperolsson</groupId>
    <artifactId>cogniation</artifactId>
    <version>0.1</version>
+   <name>cogniation</name>
+   <description>Tool for cognitive association training/rehabilitation.</description>
+   <url>cogniation.jesperolsson.se</url>
+   <inceptionYear>2021</inceptionYear>
+   <licenses>
+     <license>
+       <name>GNU General Public License, Version 3.0</name>
+       <url>https://www.gnu.org/licenses/gpl-3.0.html</url>
+       <distribution>repo</distribution>
+       <comments>Copyleft</comments>
+     </license>
+   </licenses>
+   <developers>
+     <developer>
+       <id>jespolss</id>
+       <name>Jesper Olsson</name>
+       <email>software@jesperolsson.se</email>
+    </developer>
+  </developers>
 
   <properties>
     <qulice.version>0.18.19</qulice.version>

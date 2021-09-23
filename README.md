@@ -7,6 +7,8 @@ more independent.
 
 # Use cases
 
+Cogniation aims to be a tool that primarily facilitates home rehabilitation for stroke patients. The software should be considered complementary to traditional health care, and not a replacement.
+
 ## Patient independence
 
 Andrew is a stroke patient suffering reduced cognitive capacity and is in need of rehabilitation. Being aware of these limitations, he thinks of himself as "dumb" and feels embarrassed and vulnerable. Because of this, Andrew is reluctant to ask his family for help in administrating his exercises. _Cogniation_ would give Andrew the amount of privacy and control he needs to keep pace with his treatment.

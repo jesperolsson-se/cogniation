@@ -41,4 +41,6 @@ Small pull request will be processed much faster and are less likely to be
 rejected. Please also observe that the static code analysis is _very_ strict,
 so you'll most likely want to ensure that your changes pass the checks locally. 
 
-`mvn -Pdev clean verify`
+```bash
+./mvnw -Pdev clean verify`
+```

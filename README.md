@@ -19,17 +19,24 @@ Beatrice has almost finished her stroke rehabilitation and life has mostly retur
 
 # Usage
 
-Start by installing Cogniation through Maven.
+Execute the `Dockerfile`.
 
-`mvn clean package`
+```bash
+DOCKER_BUILDKIT=1 docker build .
+```
 
-This creates a JAR file, which can then be executed and forwarded to port 8080.
+This creates an image, from which an container can be instantiated and forwarded
+to, e.g., port 8080.
 
-`java -cp ./target/cogniation-0.1.jar:./target/deps/* se.jesperolsson.cogniation.Main`
+```bash
+docker run -d --rm -p 8080:8080 IMAGE_ID
+```
 
 Finally, point a web browser to said port.
 
-`curl http://localhost:8080`
+```bash
+curl http://localhost:8080
+```
 
 # How to contribute
 

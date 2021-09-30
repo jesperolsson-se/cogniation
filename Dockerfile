@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM openjdk:16-alpine3.13
+FROM openjdk:16-alpine3.13 AS Construction
 WORKDIR /app
 
 COPY .mvn/ .mvn
@@ -9,4 +9,8 @@ RUN ./mvnw dependency:go-offline
 COPY src ./src
 RUN ./mvnw clean package
 
-CMD ["java", "-cp", "./target/cogniation-0.1.jar:./target/deps/*", "se.jesperolsson.cogniation.Main"]
+FROM openjdk:16-alpine3.13 AS Execution
+WORKDIR /app
+COPY --from=Construction /app/target/cogniation-0.1.jar ./
+COPY --from=Construction /app/target/deps ./deps
+CMD ["java", "-cp", "./cogniation-0.1.jar:./deps/*", "se.jesperolsson.cogniation.Main"]

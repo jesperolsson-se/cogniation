@@ -19,17 +19,16 @@ Beatrice has almost finished her stroke rehabilitation and life has mostly retur
 
 # Usage
 
-Execute the `Dockerfile`.
+Pull the latest image from Docker Hub.
 
 ```bash
-DOCKER_BUILDKIT=1 docker build .
+docker pull jesperolssonse/cogniation:latest
 ```
 
-This creates an image, from which an container can be instantiated and forwarded
-to, e.g., port 8080.
+Next, instantiate a container and forward it to, e.g., port 8080.
 
 ```bash
-docker run -d --rm -p 8080:8080 IMAGE_ID
+docker run -d --rm -p 8080:8080 jesperolssonse/cogniation:latest
 ```
 
 Finally, point a web browser to said port.

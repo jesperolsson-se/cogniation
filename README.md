@@ -19,17 +19,23 @@ Beatrice has almost finished her stroke rehabilitation and life has mostly retur
 
 # Usage
 
-Start by installing Cogniation through Maven.
+Pull the latest image from Docker Hub.
 
-`mvn clean package`
+```bash
+docker pull jesperolssonse/cogniation:latest
+```
 
-This creates a JAR file, which can then be executed and forwarded to port 8080.
+Next, instantiate a container and forward it to, e.g., port 8080.
 
-`java -cp ./target/cogniation-0.1.jar:./target/deps/* se.jesperolsson.cogniation.Main`
+```bash
+docker run -d --rm -p 8080:8080 jesperolssonse/cogniation:latest
+```
 
 Finally, point a web browser to said port.
 
-`curl http://localhost:8080`
+```bash
+curl http://localhost:8080
+```
 
 # How to contribute
 
@@ -41,4 +47,6 @@ Small pull request will be processed much faster and are less likely to be
 rejected. Please also observe that the static code analysis is _very_ strict,
 so you'll most likely want to ensure that your changes pass the checks locally. 
 
-`mvn -Pdev clean verify`
+```bash
+./mvnw -Pdev clean verify`
+```

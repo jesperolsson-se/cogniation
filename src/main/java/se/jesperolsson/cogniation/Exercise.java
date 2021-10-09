@@ -7,7 +7,7 @@ import java.util.Iterator;
 import org.takes.Request;
 import org.takes.Response;
 import org.takes.Take;
-import org.takes.rs.RsText;
+import org.takes.rs.RsHtml;
 
 /**
  * Exercise for cognitive training or rehabilitation.
@@ -34,8 +34,8 @@ public final class Exercise implements Take {
 
     @Override
     public Response act(final Request request) {
-        return new RsText(
-            this.associations.next().instructions()
+        return new RsHtml(
+            String.format("<h1>%s</h1>", this.associations.next().instructions())
         );
     }
 }

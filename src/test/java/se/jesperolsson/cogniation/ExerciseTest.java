@@ -21,7 +21,7 @@ public class ExerciseTest {
     public void completeSeries() throws IOException {
         final String response = "Foo";
         Assertions.assertEquals(
-            response,
+            String.format("<h1>%s</h1>", response),
             new RsPrint(
                 new Exercise(
                     new IteratorOf(

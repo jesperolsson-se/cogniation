@@ -51,6 +51,7 @@
   </dependencies>
 
   <build>
+    <finalName>cogniation</finalName>
     <pluginManagement>
       <plugins>
         <plugin>

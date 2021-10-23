@@ -10,6 +10,11 @@
    <name>cogniation</name>
    <description>Tool for cognitive association training/rehabilitation.</description>
    <url>cogniation.jesperolsson.se</url>
+   <scm> 
+     <connection>scm:git:git@github.com:jesperolsson-se/cogniation.git</connection>
+     <developerConnection>scm:git:git@github.com:jesperolsson-se/cogniation.git</developerConnection>
+     <url>https://github.com/jesperolsson-se/cogniation</url>
+   </scm>
    <inceptionYear>2021</inceptionYear>
    <licenses>
      <license>

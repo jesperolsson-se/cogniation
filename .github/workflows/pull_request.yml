@@ -1,6 +1,6 @@
-name: Maven verify
+name: Static analysis
 
-on: [push]
+on: [pull_request]
 
 jobs:
   build:

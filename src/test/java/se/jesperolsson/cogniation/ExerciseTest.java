@@ -3,7 +3,6 @@
  */
 package se.jesperolsson.cogniation;
 
-import java.io.IOException;
 import org.cactoos.iterator.IteratorOf;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -18,10 +17,10 @@ import org.takes.rs.RsPrint;
 public class ExerciseTest {
 
     @Test
-    public void completeSeries() throws IOException {
+    public void completeSeries() throws Exception {
         final String response = "Foo";
         Assertions.assertEquals(
-            String.format("<h1>%s</h1>", response),
+            String.format("<meta charset=\"UTF-8\"><h1>%s</h1>", response),
             new RsPrint(
                 new Exercise(
                     new IteratorOf(

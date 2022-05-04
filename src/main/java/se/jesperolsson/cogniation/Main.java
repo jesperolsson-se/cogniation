@@ -35,6 +35,7 @@ public final class Main {
      */
     public static void main(final String... args) throws Exception {
         final int port = 8080;
+        final String language = args[0];
         new FtBasic(
             new TkFork(
                 new FkRegex(
@@ -44,7 +45,7 @@ public final class Main {
                             new Mapped<>(
                                 text -> new AcText(text.asString()),
                                 new Split(
-                                    new TextOf(new File("Exercises", "en_us")),
+                                    new TextOf(new File("Exercises", language)),
                                     new TextOf("[\r\n]+")
                                 )
                             )

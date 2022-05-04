@@ -35,7 +35,10 @@ public final class Exercise implements Take {
     @Override
     public Response act(final Request request) {
         return new RsHtml(
-            String.format("<h1>%s</h1>", this.associations.next().instructions())
+            String.format(
+                "<meta charset=\"UTF-8\"><h1>%s</h1>",
+                this.associations.next().instructions()
+            )
         );
     }
 }

@@ -5,8 +5,10 @@ ARG GIT_REVISION=local
 
 LABEL GIT_REVISION=$GIT_REVISION
 
+ENV LANGUAGE=en_us
+
 WORKDIR /app
 COPY Exercises/ ./Exercises/
 COPY target/cogniation.jar ./
 COPY target/deps ./deps
-CMD ["java", "-cp", "./cogniation.jar:./deps/*", "se.jesperolsson.cogniation.Main"]
+CMD ["sh", "-c", "java -cp ./cogniation.jar:./deps/* se.jesperolsson.cogniation.Main $LANGUAGE"]

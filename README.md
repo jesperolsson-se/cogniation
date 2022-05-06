@@ -28,7 +28,7 @@ docker pull jesperolssonse/cogniation:latest
 Next, instantiate a container and forward it to, e.g., port 8080.
 
 ```bash
-docker run -d --rm -p 8080:8080 jesperolssonse/cogniation:latest
+docker run -d --rm -p 8080:8080 -e LANGUAGE=en_us jesperolssonse/cogniation:latest
 ```
 
 Finally, point a web browser to said port.

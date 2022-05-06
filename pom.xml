@@ -33,7 +33,7 @@
   </developers>
 
   <properties>
-    <qulice.version>0.18.19</qulice.version>
+    <qulice.version>0.19.1</qulice.version>
   </properties>
 
   <dependencies>
@@ -71,8 +71,8 @@
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.8.1</version>
           <configuration>
-            <target>16</target>
-            <source>16</source>
+            <target>18</target>
+            <source>18</source>
           </configuration>
         </plugin>
         <plugin>
